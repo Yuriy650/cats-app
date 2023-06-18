@@ -1,7 +1,10 @@
 {
+  "homepage": "https://Yuriy650.github.io/cats-app",
   "name": "cat-app",
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "npm run build -- --prod=true --base-href=https://Yuriy650.github.io/cats-app/",
+    "deploy": "@powershell copy dist/cats-app/index.html dist/cats-app/404.html && gh-pages -d dist/cats-app",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -35,6 +38,7 @@
     "@angular/cli": "~15.1.5",
     "@angular/compiler-cli": "^15.1.0",
     "@types/jasmine": "~4.3.0",
+    "gh-pages": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
