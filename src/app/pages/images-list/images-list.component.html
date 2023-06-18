@@ -1,0 +1,19 @@
+<div class="centered-content">
+  <app-form [currentPage]="currentPage"></app-form>
+  <div class="cats-container">
+
+    <mat-card class="cat-card col-md-3"
+              *ngFor="let cat of cats$ | async"
+              (click)="getCurrentCard(cat)"
+              >
+      <img class="cat-image" mat-card-image [src]=cat.url [alt]="cat.id">
+    </mat-card>
+  </div>
+  <div class="pages-btns">
+    <button mat-button color="primary"
+            class="minus-btn"
+            (click)="getPrevPage()" [disabled]="currentPage === 0">-</button>
+    <span class="current-page">{{currentPage + 1}}</span>
+    <button mat-button color="warn" class="plus-btn" (click)="getNextPage()">+</button>
+  </div>
+</div>

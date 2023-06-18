@@ -1,0 +1,42 @@
+<form [formGroup]="imagesForm" (ngSubmit)="onSubmit()">
+    <section class="selects-section">
+      <fieldset>
+        <label>Breeds</label>
+        <ng-select [items]="breeds$ | async"
+                   class="form-field"
+                   [searchable]="false"
+                   bindLabel="name"
+                   bindValue="id"
+                   formControlName="breed_ids">
+        </ng-select>
+      </fieldset>
+      <fieldset class="limit-fieldset">
+        <label>Limit</label>
+        <ng-select class="form-field"
+                   [items]="limits"
+                   [searchable]="false"
+                   formControlName="limit"
+        >
+        </ng-select>
+      </fieldset>
+      <fieldset class="order-fieldset">
+        <label>Order</label>
+        <ng-select class="form-field"
+                   [items]="orders"
+                   [searchable]="false"
+                   formControlName="order"
+        >
+        </ng-select>
+      </fieldset>
+    </section>
+    <section class="with-btn">
+      <fieldset>
+        <label class="label-breeds">Has breeds?: </label>
+        <mat-radio-group class="radio-group" formControlName="has_breeds">
+          <mat-radio-button value=1>Yes</mat-radio-button>
+          <mat-radio-button value=0>No</mat-radio-button>
+        </mat-radio-group>
+      </fieldset>
+      <button mat-raised-button color="warn" type="submit" class="submit-btn">Filter</button>
+    </section>
+</form>

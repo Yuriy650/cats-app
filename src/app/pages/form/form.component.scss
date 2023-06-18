@@ -1,0 +1,129 @@
+:host {
+  position: fixed;
+  z-index: 100;
+  background: #fff;
+  top: 0;
+  max-width: 1000px;
+  width: calc(100% - 2rem);
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 15rem;
+}
+
+.selects-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+}
+
+.with-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  @media (max-width: 576px) {
+    width: calc(100% - 1rem);
+  }
+}
+
+.form-field-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - 1rem);
+  }
+}
+
+label {
+  @media (max-width: 576px) {
+    width: 20%;
+  }
+}
+
+.limit-fieldset, .order-fieldset {
+  width: 50%;
+  @media (max-width: 576px) {
+    width: calc(100% - 1rem);
+  }
+}
+
+.form-field {
+  align-items: center;
+  box-sizing: content-box;
+  background: none;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  cursor: default;
+  width: 100%;
+  &:focus {
+    border: 1px solid #3f51b5
+  }
+}
+
+.submit-btn {
+  width: 100%;
+  @media (max-width: 576px) {
+    width: 50%;
+  }
+}
+
+ng-select {
+  margin-top: 0.5rem;
+}
+
+.radio-group {
+  @media (max-width: 576px) {
+    margin-left: 1rem;
+  }
+}
+
+::ng-deep.ng-select.ng-select-single .ng-select-container .ng-value-container, ::ng-deep.ng-select .ng-clear-wrapper {
+  top: 0.5rem;
+}
+
+::ng-deep.ng-dropdown-panel .ng-dropdown-panel-items {
+  padding: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background: #eeeeee;
+}
+
+::ng-deep.ng-select input   {
+}
+
+::ng-deep.ng-select input, ::ng-deep.ng-select span {
+  box-sizing: border-box;
+  height: 2rem;
+  padding-left: 0.5rem;
+}
+
+::ng-deep.ng-select.ng-select-single .ng-select-container .ng-value-container, .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  display: flex;
+  align-items: center;
+}
+
+.ng-dropdown-panel .scroll-host {
+  height: 6rem;
+}

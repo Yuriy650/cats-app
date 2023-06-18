@@ -1,0 +1,57 @@
+.cats-container {
+  display: flex;
+  max-width: 1000px;
+  margin-top: 10.5rem;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  flex-grow: 0;
+  @media (max-width: 576px) {
+    margin-top: 15.5rem;
+  }
+}
+
+.cat-card {
+  width: 48%;
+  height: 18rem;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  margin: 0.5rem;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  &:hover {
+    box-shadow: 0 0 0 5px #eeeeee;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.cat-image {
+  height: 100%;
+  width: 100%
+}
+
+.pages-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1.5rem 2rem 0;
+}
+
+.current-page {
+  font-weight: 500;
+  color: #ffd740;
+}
+
+.plus-btn {
+  margin-left: 1.5rem;
+}
+
+.minus-btn {
+  margin-right: 1.5rem;
+}
+
+
+

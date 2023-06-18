@@ -1,0 +1,80 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.cat-view-card {
+  max-width: 750px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  flex-grow: 0;
+}
+
+.header-image {
+  background-size: cover;
+  margin-right: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+mat-card-title {
+  line-height: 16px;
+}
+
+.main-image {
+  max-height: 450px;
+  background-size: cover;
+  @media (max-width: 576px) {
+    max-height: 335px;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.key-points-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0000008a;
+  padding: 0 1rem;
+}
+
+.titles-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  position: relative;
+}
+
+.actions {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-title {
+  color: #000000;
+}
+
+.description {
+  color: #0000008a;
+}
+
+mat-card-content {
+  font-family: Roboto;
+  padding: 1rem;
+}
+
+
+
+
