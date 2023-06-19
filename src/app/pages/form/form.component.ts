@@ -1,11 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {WebRequestService} from "../../services/web-request.service";
 import * as CatActions from "../../store/actions/cat.actions";
 import {Store} from "@ngrx/store";
 import {IAppState} from "../../store/state/app.state";
 import {Observable} from "rxjs";
-import {BreedsInterface} from "../../interfaces/breeds.interface";
+import {IBreeds} from "../../interfaces/breeds.interface";
 
 @Component({
   selector: 'app-form',
@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
   }
   public orders = ['ASC', 'DESC', 'RAND'];
   public limits = [5, 10, 20, 50, 100];
-  public breeds$: Observable<BreedsInterface[]>;
+  public breeds$: Observable<IBreeds[]>;
   public imagesForm: FormGroup = this.fb.group({
     breed_ids: [null],
     order: [null],

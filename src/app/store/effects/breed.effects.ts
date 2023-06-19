@@ -5,7 +5,7 @@ import {Action, Store} from "@ngrx/store";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {WebRequestService} from "../../services/web-request.service";
 import {IAppState} from "../state/app.state";
-import {BreedsInterface} from "../../interfaces/breeds.interface";
+import {IBreeds} from "../../interfaces/breeds.interface";
 
 @Injectable()
 export class BreedEffects {
@@ -13,7 +13,7 @@ export class BreedEffects {
     this._actions$.pipe(
       ofType(BreedActions.GetBreeds),
       switchMap(() => this._requestService.getAllBreeds().pipe(
-        map((breeds: BreedsInterface[]) => BreedActions.GetBreedsSuccess({
+        map((breeds: IBreeds[]) => BreedActions.GetBreedsSuccess({
           breeds
         }))
       ))

@@ -1,4 +1,4 @@
-export interface ImagesFilterForm {
+export interface IImagesFilterForm {
   limit?: number,
   order?: string,
   breed_ids?: string,

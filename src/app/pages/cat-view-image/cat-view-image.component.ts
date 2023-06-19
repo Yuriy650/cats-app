@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {WebRequestService} from "../../services/web-request.service";
 import {Observable} from "rxjs";
-import {CatImage} from "../../interfaces/cat-image.interface";
+import {ICatImage} from "../../interfaces/cat-image.interface";
 import * as CatActions from "../../store/actions/cat.actions";
 import {IAppState} from "../../store/state/app.state";
 import {select, Store} from "@ngrx/store";
@@ -14,7 +14,7 @@ import {selectCurrentCat} from "../../store/selectors/cat.selector";
   styleUrls: ['./cat-view-image.component.scss']
 })
 export class CatViewImageComponent implements OnInit{
-  public currentCatImage$: Observable<CatImage | null>;
+  public currentCatImage$: Observable<ICatImage | null>;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private requestService: WebRequestService,

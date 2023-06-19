@@ -1,6 +1,6 @@
 import {createAction, props} from "@ngrx/store";
-import {CatImage} from "../../interfaces/cat-image.interface";
-import {ImagesFilterForm} from "../../interfaces/images-filter-form.interface";
+import {ICatImage} from "../../interfaces/cat-image.interface";
+import {IImagesFilterForm} from "../../interfaces/images-filter-form.interface";
 
 export enum ECatActions {
   GetCats = '[Cat] Get Cats',
@@ -17,17 +17,17 @@ export const GetCats = createAction(
 
 export const GetCatsSuccess = createAction(
   ECatActions.GetCatsSuccess,
-  props<{cats: CatImage[]}>()
+  props<{cats: ICatImage[]}>()
 )
 
 export const GetFilteredCats = createAction(
   ECatActions.GetFilteredCats,
-  props<{filter: ImagesFilterForm}>()
+  props<{filter: IImagesFilterForm}>()
 )
 
 export const GetCurrentCatsPage = createAction(
   ECatActions.GetCurrentCatsPage,
-  props<{page: number}>()
+  props<{page: number | null}>()
 )
 
 export const GetCat = createAction(
@@ -37,5 +37,5 @@ export const GetCat = createAction(
 
 export const GetCatSuccess = createAction(
   ECatActions.GetCatSuccess,
-  props<{cat: CatImage}>()
+  props<{cat: ICatImage}>()
 )

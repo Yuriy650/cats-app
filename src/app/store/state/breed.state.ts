@@ -1,7 +1,7 @@
-import {BreedsInterface} from "../../interfaces/breeds.interface";
+import {IBreeds} from "../../interfaces/breeds.interface";
 
 export interface IBreedState {
-  breeds: BreedsInterface[] | null;
+  breeds: IBreeds[] | null;
 }
 
 export const initialBreedState: IBreedState = {

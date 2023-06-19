@@ -1,8 +1,8 @@
-import {CatImage} from "../../interfaces/cat-image.interface";
+import {ICatImage} from "../../interfaces/cat-image.interface";
 
 export interface ICatState {
-  cats: CatImage[] | null,
-  selectedCat: CatImage | null,
+  cats: ICatImage[] | null,
+  selectedCat: ICatImage | null,
   currentPage: number | null
 }
 

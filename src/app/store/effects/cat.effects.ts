@@ -5,7 +5,7 @@ import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {WebRequestService} from "../../services/web-request.service";
 import {IAppState} from "../state/app.state";
 import * as CatActions from '../actions/cat.actions';
-import {CatImage} from "../../interfaces/cat-image.interface";
+import {ICatImage} from "../../interfaces/cat-image.interface";
 
 @Injectable()
 export class CatEffects {
@@ -13,7 +13,7 @@ export class CatEffects {
     this._actions$.pipe(
       ofType(CatActions.GetCats),
       switchMap(() => this._requestService.getAllCatsImage().pipe(
-        map((cats: CatImage[]) => CatActions.GetCatsSuccess({
+        map((cats: ICatImage[]) => CatActions.GetCatsSuccess({
           cats
         }))
       ))
@@ -35,7 +35,7 @@ export class CatEffects {
     this._actions$.pipe(
       ofType(CatActions.GetCat),
       switchMap(payload => this._requestService.getCurrentCatByImageId(payload.id).pipe(
-          map((cat: CatImage) => CatActions.GetCatSuccess({
+          map((cat: ICatImage) => CatActions.GetCatSuccess({
             cat
           }
           )

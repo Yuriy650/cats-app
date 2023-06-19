@@ -1,4 +1,4 @@
-export interface BreedsInterface {
+export interface IBreeds {
   weight: {
   imperial: string,
   metric: string

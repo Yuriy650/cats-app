@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WebRequestService} from "../../services/web-request.service";
 import {Observable} from "rxjs";
-import {CatImage} from "../../interfaces/cat-image.interface";
+import {ICatImage} from "../../interfaces/cat-image.interface";
 import {Router} from "@angular/router";
 import { IAppState } from 'src/app/store/state/app.state';
 import {select, Store} from "@ngrx/store";
@@ -15,9 +15,9 @@ import {GetCurrentCatsPage} from "../../store/actions/cat.actions";
   styleUrls: ['./images-list.component.scss']
 })
 
-export class ImagesListComponent implements OnInit{
+export class ImagesListComponent implements OnInit {
   public currentPage: number = 0;
-  public cats$: Observable<CatImage[] | null> = this._store.pipe(select(selectAllCats));
+  public cats$: Observable<ICatImage[] | null> = this._store.pipe(select(selectAllCats));
 
   constructor(public requestService: WebRequestService,
               public router: Router,
@@ -27,7 +27,7 @@ export class ImagesListComponent implements OnInit{
     this._store.dispatch(CatActions.GetCats());
   }
 
-  public getCurrentCard(cat: CatImage) {
+  public getCurrentCard(cat: ICatImage) {
     if (cat.breeds.length > 0) {
       this.router.navigate(['/images', cat.id]);
     }

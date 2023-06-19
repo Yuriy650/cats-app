@@ -1,9 +1,9 @@
-import {BreedsInterface} from "./breeds.interface";
+import {IBreeds} from "./breeds.interface";
 
-export interface CatImage {
+export interface ICatImage {
   id: string;
   url: string;
-  breeds: BreedsInterface[],
+  breeds: IBreeds[],
   height: number;
   width: number
 }
